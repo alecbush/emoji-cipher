@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Emoji Cipher 😄</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Cipher encoding with emojis">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="emoji,cipher,encryption">
+        <meta name="author" content="Alec Bush">
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <script src="https://dl.dropboxusercontent.com/s/r55397ld512etib/EncoderDecoderTogether.min.js?dl=0" type="text/javascript"></script>
+        <script src="emojiCipher.js" type="text/javascript"></script>
+    </header>
+    <body>
+        <div class="container">
+            <h1>Emoji Cipher 😄</h1>
+            <textarea id="text" class="form-component" placeholder="text" maxlength=999></textarea>
+            <input id="key" class="form-component" type="text" placeholder="key" maxlength=36/>
+            <div class="button-container">
+                <button id="encode" class="form-component" type="button">Encode</button>
+                <button id="decode" class="form-component" type="button">Decode</button>
+            </div>
+            <div class="link-container">
+                <a href="https://github.com/alecbush/emoji-cipher" target="_blank">github</a>
+            </div>
+        </div>
+        <script src="main.js" type="text/javascript"></script>
+    </body>
+</html>

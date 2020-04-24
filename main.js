@@ -11,15 +11,8 @@
     const cipher = encode => {
 
         const text = document.getElementById('text').value;
+        const key = document.getElementById('key').value;
         
-        const key = (() => {
-            const keyArg = document.getElementById('key').value;
-            if (keyArg.length !== 0 && !isNaN(keyArg)) {
-                return parseInt(keyArg);
-            }
-            return keyArg;
-        })();
-    
         document.getElementById('text').value = (() => {
             const emoji = new EmojiCipher(key);
             return encode ? emoji.encode(text) : emoji.decode(text);

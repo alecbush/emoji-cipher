@@ -1,7 +1,7 @@
 /**
  * EmojiCipher-JS
  * Copyright (c) 2020 Alec Bush
- * Version: 0.2.0
+ * Version: 0.2.1
  * Licensed under the MIT License (http://opensource.org/licenses/MIT)
  */
 
@@ -80,12 +80,16 @@
         return emojiCipher;
     };
     
-    if (typeof define === 'function' && define.amd) {
-        define([], function() {
-            return EmojiCipher;
-        });
+    if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+        module.exports = EmojiCipher;
     } else {
-        window.EmojiCipher = EmojiCipher;
+        if (typeof define === 'function' && define.amd) {
+            define([], function() {
+                return EmojiCipher;
+            });
+        } else {
+            window.EmojiCipher = EmojiCipher;
+        }
     }
 
 })();

@@ -1,19 +1,16 @@
 /**
  * EmojiCipher-JS
  * Copyright (c) 2020 Alec Bush
- * Version: 0.1.0
+ * Version: 0.2.1
  * Licensed under the MIT License (http://opensource.org/licenses/MIT)
  */
 
 (function () {
 
-    const EmojiCipher = function (keyArg = 0) {
+    const EmojiCipher = function (keyArg) {
 
         const key = (() => {
-            if (typeof keyArg === 'number') {
-                return [Math.floor(keyArg) % 256];
-            }
-            else if (typeof keyArg === 'string' && keyArg.length > 0) {
+            if (keyArg && keyArg.toString().length > 0) {
                 let keyMod = 1;
                 return Array.from(new TextEncoder().encode(keyArg))
                     .map(keyVal => {
@@ -31,7 +28,7 @@
                 for (let i = start; i <= end; i++) {
                     yield i;
                 }
-            }
+            };
             const emojiCodePoints = [].concat(
                 [...intRange(128000, 128317)],
                 [...intRange(128512, 128519)],
@@ -78,17 +75,21 @@
                     )
                 );
             }
-        }
+        };
     
         return emojiCipher;
     };
     
-    if (typeof define === 'function' && define.amd) {
-        define([], function() {
-            return EmojiCipher;
-        });
+    if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+        module.exports = EmojiCipher;
     } else {
-        window.EmojiCipher = EmojiCipher;
+        if (typeof define === 'function' && define.amd) {
+            define([], function() {
+                return EmojiCipher;
+            });
+        } else {
+            window.EmojiCipher = EmojiCipher;
+        }
     }
 
 })();

@@ -20,11 +20,15 @@ View full compatibility for [TextEncoder](https://developer.mozilla.org/en-US/do
 
 Polyfill is available [here](https://github.com/anonyco/FastestSmallestTextEncoderDecoder).
 
-## Include Script
+## Install 
+### Include Script - HTML
 ```
 <script src="emojiCipher.js" type="text/javascript"></script>
 ```
-
+### Include Module - Node.js
+```
+const EmojiCipher = require('./emojiCipher')
+```
 ## Usage
 
 ### Declare new EmojiCipher w/ Key

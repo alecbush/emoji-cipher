@@ -25,19 +25,6 @@ Polyfill is available [here](https://github.com/anonyco/FastestSmallestTextEncod
 <script src="emojiCipher.js" type="text/javascript"></script>
 ```
 
-## Key Types
-
-Number types are whole numbers used as a singular key value. (255 max)
-```
-// key: 31
-new EmojiCipher(31);
-```
-String types are encoded to a Uint8 array as multiple key values.
-```
-// key: secret
-new EmojiCipher('secret');
-```
-
 ## Usage
 
 ### Declare new EmojiCipher w/ Key

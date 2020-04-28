@@ -8,7 +8,7 @@ h1 {
     font-family: 'Manrope', sans-serif;
 }
 
-.container {
+#app {
     width: 90%;
     max-width: 500px;
     min-width: 215px;
